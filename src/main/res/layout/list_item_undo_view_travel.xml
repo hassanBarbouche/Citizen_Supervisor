@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/undo_button_travel"
+    android:layout_width="match_parent"
+    android:layout_height="144dp"
+    android:background="@color/main_color_grey_100"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/black"
+        android:gravity="center" >
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="20dp">
+        <com.github.jorgecastilloprz.FABProgressCircle
+            android:id="@+id/fabProgressCirclestop"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:arcColor="#00ffff"
+            app:arcWidth="7dp"
+            app:finalIcon="@drawable/ic_done"
+            android:layout_gravity="center_horizontal|top">
+
+            <!-- You can change it with the fab from the library you want to use -->
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabstop"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+
+                android:src="@drawable/recstopbtn"
+
+
+                app:borderWidth="0dp"
+                />
+
+        </com.github.jorgecastilloprz.FABProgressCircle>
+
+            <com.github.jorgecastilloprz.FABProgressCircle
+            android:id="@+id/fabProgressCirclerec"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:arcColor="#00ffff"
+            app:arcWidth="7dp"
+            app:finalIcon="@drawable/ic_done"
+            android:layout_gravity="center_horizontal|top">
+
+            <!-- You can change it with the fab from the library you want to use -->
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabplay"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+
+                android:src="@drawable/playbtn"
+
+
+                app:borderWidth="0dp"
+                />
+
+        </com.github.jorgecastilloprz.FABProgressCircle>
+        </FrameLayout>
+
+        <com.esprit.droidcon.corruption.font.RobotoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+
+            android:text="tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo . Duis aute ioccaecat "
+            android:textColor="#fff"
+            android:textSize="11sp"
+            android:id="@+id/photodescription"
+           />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView4"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@color/cpb_red_dark">
+
+        <com.esprit.droidcon.corruption.font.RobotoTextView
+            android:id="@+id/undo_button_travel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="Swipe to dismiss"
+            android:textColor="#000"
+            android:textSize="10sp"
+           />
+
+        <com.esprit.droidcon.corruption.font.RobotoTextView
+            android:id="@+id/undo_button_travel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="Press to undo"
+            android:textColor="#000"
+            android:textSize="10sp"
+           />
+    </LinearLayout>
+
+</LinearLayout>

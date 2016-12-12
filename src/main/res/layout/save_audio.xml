@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/guichet">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="4">
+
+    <com.github.jorgecastilloprz.FABProgressCircle
+
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        app:arcColor="#00ffff"
+        app:arcWidth="10dp"
+        app:circleSize="normal"
+        app:finalIcon="@drawable/ic_done"
+        android:layout_centerInParent="true"
+        android:id="@+id/fabProgressCirclestop"
+       >
+
+        <!-- You can change it with the fab from the library you want to use -->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabstop"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+
+            android:src="@drawable/stopmic"
+
+
+            app:borderWidth="0dp"
+            />
+
+    </com.github.jorgecastilloprz.FABProgressCircle>
+
+    <com.github.jorgecastilloprz.FABProgressCircle
+
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        app:arcColor="#00ffff"
+        app:arcWidth="10dp"
+        app:finalIcon="@drawable/ic_done"
+        android:layout_centerInParent="true"
+        android:id="@+id/fabProgressCirclerec"
+        android:layout_gravity="center_horizontal|top">
+
+        <!-- You can change it with the fab from the library you want to use -->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabrec"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+
+            android:src="@drawable/mic"
+
+
+            app:borderWidth="0dp"
+            />
+
+    </com.github.jorgecastilloprz.FABProgressCircle>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Témoignage Audio"
+        android:layout_above="@id/fabProgressCirclestop"
+        android:textSize="22sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:layout_marginBottom="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60 sec"
+        android:layout_below="@id/fabProgressCirclestop"
+        android:textSize="22sp"
+        android:id="@+id/sec"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:layout_marginTop="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/cadre2"
+        android:paddingLeft="@dimen/photo_description_side_padding"
+        android:paddingRight="@dimen/photo_description_side_padding"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        >
+
+        <Button
+
+            android:layout_marginLeft="30dp"
+            android:id="@+id/savebtn"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/savefile"
+
+            android:layout_gravity="center_horizontal|top"
+            android:layout_centerVertical="true">
+
+
+
+        </Button>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/savebtn"
+            android:layout_marginLeft="15dp"
+            android:text="Une foi l&apos;enregistrement terminé enregistrez le avec ce boutton , vous pouvez ensuite  l&apos;uploader dans le dernier Pager."
+            android:layout_centerVertical="true" />
+
+</RelativeLayout>
+    </LinearLayout>

@@ -1,0 +1,137 @@
+apply plugin: 'android'
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.parse.com/repo'
+        }
+
+    }
+    dependencies {
+        classpath 'com.parse.tools:gradle:1.+'
+
+    }
+}
+android {
+
+    compileSdkVersion 23
+    buildToolsVersion '22.0.1'
+
+    defaultConfig {
+        applicationId "com.esprit.droidcon.corruption"
+        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+        versionName "4.0"
+        versionCode 4
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError Boolean.parseBoolean(project.ABORT_ON_ERROR)
+    }
+
+    signingConfigs { release }
+
+    buildTypes {
+
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro', 'proguard-rules-new.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+    }
+
+    dexOptions {
+        preDexLibraries = false
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+
+    afterEvaluate {
+        tasks.matching {
+            it.name.startsWith('dex')
+        }.each { dx ->
+            if (dx.additionalParameters == null) {
+                dx.additionalParameters = ['--multi-dex']
+            } else {
+                dx.additionalParameters += '--multi-dex'
+            }
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+    // compile 'libraries.android_support'
+    compile 'com.squareup.picasso:picasso:2.3.3'
+    compile 'com.daimajia.slider:library:1.1.5@aar'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+    compile 'com.android.support:support-v4:23.1.0'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.1.0'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.github.bumptech.glide:glide:3.6.0'
+    compile 'com.etsy.android.grid:library:1.0.5'
+    compile 'com.parse.bolts:bolts-android:1.2.1'
+    compile 'com.parse:parse-android:1.10.3'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+    compile 'com.github.jorgecastilloprz:fillableloaders:1.02@aar'
+    compile 'fr.avianey.com.viewpagerindicator:library:2.4.1@aar'
+    compile 'com.github.tibolte:elasticdownload:1.0.+'
+    compile 'com.github.jorgecastilloprz:fabprogresscircle:1.01@aar'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.yalantis:contextmenu:1.0.6'
+    compile 'com.mcxiaoke.volley:library:1.0.18'
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile project(':library')
+    compile project(':facebook')
+
+    //  compile project(':ListViewAnimations-core')
+    //compile project(':progress')
+    compile (project(':SwipeTouchListenerTestActivity'))
+            {
+        exclude group: 'com.android.support'
+    }
+  //  compile project(':ListViewAnimations-core')
+}
+
+
+
+File propFile = file('signing.properties');
+if (propFile.exists()) {
+    def Properties props = new Properties()
+    props.load(new FileInputStream(propFile))
+
+    if (props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+            props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
+        android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+        android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+        android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+        android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+    } else {
+        android.buildTypes.release.signingConfig = null
+    }
+} else {
+    android.buildTypes.release.signingConfig = null
+}
+
+

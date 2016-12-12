@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/uploadback"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:clipChildren="false">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="4">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
+        android:id="@+id/corruption_name_enter"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:backgroundTint="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true">
+        <EditText android:id="@+id/corruption_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Titre"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/corruption_name_enter"
+        android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
+        android:id="@+id/corruption_desc_enter"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:backgroundTint="#ffffff"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+        <EditText android:id="@+id/Desc_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff" />
+    </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Etes vous sur les lieux ?"
+        android:layout_below="@+id/corruption_desc_enter"
+
+        android:id="@+id/switch2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/corruption_adress_enter"
+        android:layout_below="@+id/switch2"
+        android:textColorHint="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:backgroundTint="#ffffff"
+        android:layout_centerHorizontal="true">
+        <EditText android:id="@+id/adress_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sinon entre l'adresse ici"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/corruption_ville_enter"
+        android:layout_below="@+id/corruption_adress_enter"
+        android:textColorHint="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:backgroundTint="#ffffff"
+        android:layout_centerHorizontal="true">
+        <EditText android:id="@+id/ville_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ville,Quartier,Emplacement..."
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Spinner
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:entries="@array/operating_systems"
+        android:spinnerMode="dialog"
+        android:id="@+id/spinner4"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/corruption_ville_enter" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:layout_below="@+id/spinner4"
+
+        android:layout_alignLeft="@+id/corruption_desc_enter"
+        android:layout_alignStart="@+id/corruption_desc_enter"
+        android:layout_centerHorizontal="true" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/datePicker"
+        android:id="@+id/timePicker"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/cadre2"
+        android:paddingLeft="@dimen/photo_description_side_padding"
+        android:paddingRight="@dimen/photo_description_side_padding"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        >
+
+
+        <com.github.jorgecastilloprz.FABProgressCircle
+            android:id="@+id/fabProgressCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_top_margin"
+            >
+
+            <!--Google FAB-->
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_upload"
+                app:rippleColor="@color/fab_ripple"
+                app:elevation="@dimen/fab_elevation"
+                app:borderWidth="0dp"
+                />
+
+
+        </com.github.jorgecastilloprz.FABProgressCircle>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/corruption_UserNom"
+
+            android:textColorHint="#ffffff"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:backgroundTint="#ffffff"
+            android:layout_marginTop="10dp">
+            <EditText android:id="@+id/UserNom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom et prénom..."
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textSize="10sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/corruption_UserAdress"
+          android:layout_below="@+id/corruption_UserNom"
+            android:textColorHint="#ffffff"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:backgroundTint="#ffffff">
+            <EditText android:id="@+id/UserAdress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Votre Adresse..."
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textSize="10sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/corruption_UserTel"
+android:layout_toEndOf="@+id/corruption_UserNom"
+            android:textColorHint="#ffffff"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:backgroundTint="#ffffff"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp">
+            <EditText android:id="@+id/UserTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="N° téléphone..."
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:inputType="phone|number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/corruption_UserEmail"
+            android:layout_toEndOf="@+id/corruption_UserAdress"
+            android:layout_below="@+id/corruption_UserNom"
+            android:textColorHint="#ffffff"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:backgroundTint="#ffffff"
+            android:layout_marginLeft="15dp">
+            <EditText android:id="@+id/UserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Votre Email..."
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textSize="10sp" />
+        </android.support.design.widget.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/corruption_UserEmail"></LinearLayout>
+
+    </RelativeLayout>
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

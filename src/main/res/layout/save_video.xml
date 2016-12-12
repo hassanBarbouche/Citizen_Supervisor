@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/videoback">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="4"
+    android:background="@drawable/videoback">
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+   <Button
+       android:layout_width="220dp"
+       android:layout_height="220dp"
+       android:background="@drawable/video"
+       android:id="@+id/savephoto"
+       android:layout_centerInParent="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Témoingage Video"
+        android:textSize="22sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:layout_above="@+id/savephoto"
+        android:layout_marginBottom="25dp" />
+
+</RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/weblay">
+
+        <WebView
+            android:id="@+id/activity_main_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </RelativeLayout>
+</FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/cadre2"
+        android:paddingLeft="@dimen/photo_description_side_padding"
+        android:paddingRight="@dimen/photo_description_side_padding"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="15sp"
+            android:id="@+id/urlvideo"
+            android:textStyle="italic"
+            android:layout_toEndOf="@+id/urltxt"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Url de votre vidéo :"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"
+            android:id="@+id/urltxt"
+            android:textStyle="bold" />
+
+
+</RelativeLayout>
+
+
+</LinearLayout>

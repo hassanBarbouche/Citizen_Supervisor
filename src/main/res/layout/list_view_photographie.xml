@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/image_f"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/boyredflou"
+        android:scaleType="matrix"
+        android:layout_gravity="left|top" />
+
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_view_photography"
+    style="@style/ListViewStyle_emna" />
+
+</FrameLayout>

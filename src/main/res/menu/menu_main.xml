@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".Main">
+    <item
+        android:id="@+id/HomeBtn"
+        android:title="Notif"
+        android:icon="@drawable/home_btn"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/about"
+        android:title="Notif"
+        android:icon="@drawable/about_icn"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+
+
+
+
+
+
+</menu>
